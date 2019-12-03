@@ -1,0 +1,206 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Windows vs Ubuntu vs OSX | Aberteo 19</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1 style="text-transform: none; font-size: 1.5em;">LEAFLET en tempos de REST</h1>
+					<img data-src="images/logo_rest.jpg" style="border: none; box-shadow: none; width: 20%; margin-right: 50px;">
+					<img data-src="images/logo_drupal.png" style="border: none; box-shadow: none; width: 20%; margin-right: 50px;">
+					<img data-src="images/logo_leaflet.jpg" style="border: none; box-shadow: none; width: 20%;">
+
+
+					<p style="text-align: center; font-size: 0.7em; color: #3498db; font-weight: bold !important; margin-top: 60px;">CHRISTIAN LÓPEZ RODRÍGUEZ</p>
+					<p style="text-align: center; font-size: 0.4em; color: grey;"><a style="color: grey;" href="http://www.aberteo.gal">Xornada de Software Libre - Mugardos</a></p>
+				</section>
+
+				<!-- Presentación -->
+				<section>
+					<br>
+					<h2>¿Quén son?</h2>
+					<p style="font-size: 0.7em;">Enxeñeiro informático</p>
+					<p style="font-size: 0.7em;">Drupal Back&Front developer en CoderyOS</p>
+					<p style="font-size: 0.8em;">*JS developer</p></p>
+					<p style="font-size: 0.8em;">Co-fundador de <a href="https://galiciacorre.es">galiciacorre</a></p>
+					<p style="font-size: 0.5em;">@christianlrcalo - clopezrodriguez95@gmail.com</p>
+					<img data-src="images/logo_drupal.png" style="border: none; box-shadow: none; width: 10%;">
+					<img data-src="images/logo_python.png" style="margin-left: 50px; border: none; box-shadow: none; width: 10%;">
+					<img data-src="images/logo_vuejs.png" style="margin-left: 50px; border: none; box-shadow: none; width: 10%;">
+					<img data-src="images/logo_galiciacorre.jpg" style="margin-left: 50px; border: none; box-shadow: none; width: 10%;">
+				</section>
+
+				<!-- Que imos ver -->
+				<section>
+					<br>
+					<h2 style="text-transform: none; font-size: 1.9em;">¿Que vamos ver?</h2>
+					<p class="fragment fade-up" style="font-size: 0.9em; font-style: italic;">Teño un Rest, ¿que fago con el?</p>
+					<p class="fragment fade-up" style="font-size: 0.9em; font-style: italic;">OpenLayers</p>
+					<p class="fragment fade-up" style="font-size: 0.9em; font-style: italic;">Leaflet</p>
+					<p class="fragment fade-up" style="font-size: 0.9em; font-style: italic;">Mapa básico (modulos)</p>
+					<p class="fragment fade-up" style="font-size: 0.9em; font-style: italic;">Mapa personalizado</p>
+					<p class="fragment fade-up" style="font-size: 0.9em; font-style: italic;">Resumen/recomendacións</p>
+				</section>
+
+				<!-- Para que sirve 1 -->
+				<section>
+					<h2>¿Para que me serve un REST?</h2>
+					<img class="fragment fade-up" data-src="images/ni_idea.gif" style="border: none; box-shadow: none; width: 40%;">
+				</section>
+
+				<!-- Para que sirve 2 -->
+				<section>
+					<br><br>
+					<p class="fragment fade-up">Acceso, descarga e almacenamento</p>
+					<p class="fragment fade-up">Web scrapping</p>
+					<p class="fragment fade-up">Interacción coa aplicación dona</p>
+					<p class="fragment fade-up"><strong>"Darlle unha volta". Segunda vida</strong></p>
+				</section>				
+				
+				<!-- Segunda vida. Graficas -->
+				<section>
+					<br>
+					<h3>"Darlle unha volta". Segunda vida</h3>
+					<p class="fragment fade-up" style="font-size: 0.8em;">Deixar un lado o convencional (csv, pdf, etc...)</p>
+					<p class="fragment fade-up" style="font-size: 0.8em;">Énfase no visual e intuitivo</p>
+					<p class="fragment fade-up" style="font-size: 0.8em;">Apoiarse na interacción co sistema visual</p>
+					<p class="fragment fade-up" style="font-size: 0.8em;">Gráficas (barras, queixos, dispersión)</p>
+					<p class="fragment fade-up" style="font-size: 0.9em;"><strong>Usar a xeolocalización en mapas/gráficos xeográficos</strong></p>
+				</section>
+
+				<!-- OpenLayers 1 -->
+				<section>
+					<h1>OpenLayers</h1>
+					<img data-src="images/logo_openlayers.png" style="border: none; box-shadow: none; width: 40%;">
+
+				</section>
+
+				<!-- OpenLayers 2 -->
+				<section>
+					<h1>OpenLayers</h1>
+					<p class="fragment fade-up" style="font-size: 0.8em;">Librería basada en JS para a xeración de mapas</p>
+					<p class="fragment fade-up" style="font-size: 0.8em;"><a href="https://openlayers.org/">Documentación moi extensa</a></p>
+					<p class="fragment fade-up" style="font-size: 0.8em;"><a href="https://www.drupal.org/project/openlayers">Módulo para Drupal 7</a></p>
+					<p class="fragment fade-up" style="font-size: 0.8em;">Grandes diferencias entre versións</p>
+					<p class="fragment fade-up" style="font-size: 0.8em;">Gran número de pasos e configuración para xerar un mapa</p>
+					<p class="fragment fade-up" style="font-size: 0.8em;">Problemas de rendemento con gran cantidade de información</p>
+				</section>
+
+				<!-- Leaflet 1 -->
+				<section>
+					<h1>Leaflet</h1>
+					<img data-src="images/logo_leaflet.jpg" style="border: none; box-shadow: none; width: 40%;">
+				</section>
+
+				<!-- Leaflet 2 -->
+				<section>
+					<h1>Leaflet</h1>
+					<p class="fragment fade-up" style="font-size: 0.8em;">Librería basada en JS para a xeración de mapas</p>
+					<p class="fragment fade-up" style="font-size: 0.8em;"><a href="https://leafletjs.com/">Documentación directa</a></p>
+					<p class="fragment fade-up" style="font-size: 0.8em;"><a href="https://www.drupal.org/project/leaflet">Módulo para Drupal 7 & 8</a></p>
+					<p class="fragment fade-up" style="font-size: 0.8em;">Simple, directo e rápido</p>
+					<p class="fragment fade-up" style="font-size: 0.8em;">Gran cantidade de extensións dispoñibles</p>
+					<p class="fragment fade-up" style="font-size: 0.8em;">Fácil combinación con HTML e CSS</p>
+				</section>
+
+				<!-- Leaflet modulo 1 -->
+				<section>
+					<h3>¿Vamos a darlle non?</h3>
+					<img data-src="images/vamos_a_ello.gif" style="border: none; box-shadow: none; width: 50%;">
+					<h2 class="fragment fade-up" style="color: red;">NON!, pouco a pouco!!</h2>
+				</section>
+
+				<!-- Leaflet modulo 2 -->
+				<section>
+					<br>
+					<br>
+					<h2>Leaflet - Modulos D8</h2>
+					<p class="fragment fade-up" style="font-size: 0.8em;"><a href="https://www.drupal.org/project/leaflet">Módulo Leaflet</a></p>
+					<p class="fragment fade-up" style="font-size: 0.8em;"><a href="https://www.drupal.org/project/geofield">Módulo Geofield</a></p>
+					<p class="fragment fade-up" style="font-size: 0.8em;"><a href="https://github.com/Leaflet/Leaflet.markercluster">Librería para agrupación (clusters)</a></p>
+				</section>
+
+				<!-- Leaflet modulo 3 -->
+				<section>
+					<br>
+					<br>
+					<h2>Leaflet - Modulos D8</h2>
+					<p class="fragment fade-up" style="font-size: 0.8em;">1. Habilitar módulos</p>
+					<p class="fragment fade-up" style="font-size: 0.8em;">2. Crear tipo de contido con campo un Geofield</p>
+					<p class="fragment fade-up" style="font-size: 0.8em;">3. Crear vista de tipo leaflet</p>
+				</section>
+
+				<!-- Leaflet modulo 4 -->
+				<section>
+					<img data-src="images/increible.gif" style="border: none; box-shadow: none; width: 80%;">
+					<h3 class="fragment fade-up">4. Xa temos mapa!</h3>
+				</section>
+
+				<!-- Leaflet modulo howto -->
+				<section>
+					<br>
+					<br>
+					<br>
+					<h2>¡VAMOH A ELLO!</h2>
+				</section>
+
+
+				
+				<!-- FIN -->
+				<section>
+					<h3>Gracias pola atención</h1>
+					<br>
+					<h4 style="color: #3498db;">¿Algunha pregunta?</h4>
+					<img data-src="images/preguntas.png" style="border: none; box-shadow: none; width: 25%;">
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script>
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: false,
+				fragments: true,
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				display: 'block',
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+
+		<!-- Footer -->
+		<div class="share-reveal" style="position: absolute; bottom: 10px; width: 100%; border-top: 1px groove lightgray;">
+			<div style="width: 100%; margin-top: 25px;">
+				<img src="images/logo_ozulo.png" style="width: 5%; margin-left: 50px; margin-right: 30px; float: left; margin-top: -12px;">
+				<h2 style="position: fixed;  left: 15%; bottom: 10px; text-align: center; color: #3498db; font-weight: bolder;">LEAFLET en tempos de REST - OZULO - 07 DECEMBRO 2019</h2>
+				<img src="images/logo_codery.png" style="width: 15%; position: fixed; right: 100px;">
+			</div>
+		</div>
+		
+	</body>
+</html>

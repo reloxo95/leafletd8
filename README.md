@@ -46,3 +46,8 @@
 17. RENDIMIENTO
 18. LO MÁS IMPORTANTE
 19. GRACIAS
+
+
+### URLS
+
+Logo rest: https://www.cleanpng.com/free/api-icon.html
